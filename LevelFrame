@@ -16,6 +16,15 @@ public class LevelFrame extends JFrame {
         JButton level1Btn = FrameUtil.createButton(this, "Level1", new Point(30, height / 2 - 50), 60, 60);
         JButton level2Btn = FrameUtil.createButton(this, "Level2", new Point(120, height / 2 - 50), 60, 60);
 
+/*
+1.墙
+0.空地
+20.玩家
+10.箱子
+2.终点
+12.箱子在终点
+*/
+
         level1Btn.addActionListener(l->{//当level1被点击时会触发地图
             MapMatrix mapMatrix = new MapMatrix(new int[][]{
                     {1, 1, 1, 1, 1, 1},
