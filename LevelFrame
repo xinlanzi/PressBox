@@ -9,20 +9,19 @@ import java.awt.*;
 
 public class LevelFrame extends JFrame {
 
-    public LevelFrame(int width, int height) {
+    public LevelFrame(int width, int height) {//level frame构造方法，在界面上显示等级
         this.setTitle("Level");
         this.setLayout(null);
         this.setSize(width, height);
-        JButton level1Btn = FrameUtil.createButton(this, "Level1", new Point(30, height / 2 - 50), 80, 60);
-        JButton level2Btn = FrameUtil.createButton(this, "Level2", new Point(140, height / 2 - 50), 80, 60);
+        JButton level1Btn = FrameUtil.createButton(this, "Level1", new Point(30, height / 2 - 50), 60, 60);
+        JButton level2Btn = FrameUtil.createButton(this, "Level2", new Point(120, height / 2 - 50), 60, 60);
 
-        level1Btn.addActionListener(l->{//第一个地图
+        level1Btn.addActionListener(l->{//当level1被点击时会触发地图
             MapMatrix mapMatrix = new MapMatrix(new int[][]{
                     {1, 1, 1, 1, 1, 1},
                     {1, 0, 0, 0, 0, 1},
                     {1, 0, 20, 12, 0, 1},
                     {1, 0, 10, 2, 0, 1},
-                    {1, 1, 1, 1, 1, 1},
                     {1, 1, 1, 1, 1, 1},
             });
             GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
@@ -30,7 +29,7 @@ public class LevelFrame extends JFrame {
             gameFrame.setVisible(true);
         });
 
-        level2Btn.addActionListener(l->{//第二个地图
+        level2Btn.addActionListener(l->{//当level2被点击的时候会触发地图
             MapMatrix mapMatrix = new MapMatrix(new int[][]{
                     {1, 1, 1, 1, 1, 0},
                     {1, 20, 0, 0, 1, 1},
@@ -45,6 +44,12 @@ public class LevelFrame extends JFrame {
         });
 
         //todo: complete all level.
+
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+
+}
 
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
