@@ -23,6 +23,7 @@ public class LevelFrame extends JFrame {
 10.箱子
 2.终点
 12.箱子在终点
+22.玩家在终点
 */
 
         level1Btn.addActionListener(l->{//当level1被点击时会触发地图
