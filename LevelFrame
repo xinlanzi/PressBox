@@ -14,7 +14,10 @@ public class LevelFrame extends JFrame {
         this.setLayout(null);
         this.setSize(width, height);
         JButton level1Btn = FrameUtil.createButton(this, "Level1", new Point(30, height / 2 - 50), 60, 60);
-        JButton level2Btn = FrameUtil.createButton(this, "Level2", new Point(120, height / 2 - 50), 60, 60);
+        JButton level2Btn = FrameUtil.createButton(this, "Level2", new Point(110, height / 2 - 50), 60, 60);
+        JButton level3Btn = FrameUtil.createButton(this, "Level3", new Point(190, height / 2 - 50), 60, 60);
+        JButton level4Btn = FrameUtil.createButton(this, "Level4", new Point(270, height / 2 - 50), 60, 60);
+        JButton level5Btn = FrameUtil.createButton(this, "Level5", new Point(350, height / 2 - 50), 60, 60);
 
 /*
 1.墙
@@ -29,37 +32,74 @@ public class LevelFrame extends JFrame {
         level1Btn.addActionListener(l->{//当level1被点击时会触发地图
             MapMatrix mapMatrix = new MapMatrix(new int[][]{
                     {1, 1, 1, 1, 1, 1},
-                    {1, 0, 0, 0, 0, 1},
-                    {1, 0, 20, 12, 0, 1},
-                    {1, 0, 10, 2, 0, 1},
+                    {1, 20, 0, 0, 0, 1},
+                    {1, 0, 0, 10, 2, 1},
+                    {1, 0, 2, 10, 0, 1},
                     {1, 1, 1, 1, 1, 1},
             });
             GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
             this.setVisible(false);
             gameFrame.setVisible(true);
-        });
+        });//已更新
 
         level2Btn.addActionListener(l->{//当level2被点击的时候会触发地图
             MapMatrix mapMatrix = new MapMatrix(new int[][]{
-                    {1, 1, 1, 1, 1, 0},
-                    {1, 20, 0, 0, 1, 1},
-                    {1, 0, 0, 2, 0, 1},
-                    {1, 0, 10, 10, 2, 1},
-                    {1, 1, 0, 1, 1, 1},
-                    {0, 1, 1, 1, 0, 0},
+                    {1, 1, 1, 1, 1, 1, 0},
+                    {1,20, 0, 0, 0, 1, 1},
+                    {1, 0,10,10, 0, 0, 1},
+                    {1, 0, 1, 2, 0, 2, 1},
+                    {1, 0, 0, 0, 0, 0, 0},
+                    {1, 1, 1, 1, 1, 1, 1},
+            });
+            GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
+            this.setVisible(false);
+            gameFrame.setVisible(true);
+        });//已更新
+
+        level3Btn.addActionListener(l->{
+            MapMatrix mapMatrix = new MapMatrix(new int[][]{
+                    {0, 0, 1, 1, 1, 1, 0},
+                    {1, 1, 1, 0, 0, 1, 0},
+                    {1,20, 0, 2,10, 1, 1},
+                    {1, 0, 0, 0,10, 0, 1},
+                    {1, 0, 1, 2, 0, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 1},
+                    {1, 1, 1, 1, 1, 1, 1},
             });
             GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
             this.setVisible(false);
             gameFrame.setVisible(true);
         });
 
-        //todo: complete all level.
+        level4Btn.addActionListener(l->{
+            MapMatrix mapMatrix = new MapMatrix(new int[][]{
+                    {0, 1, 1, 1, 1, 1, 0},
+                    {1, 1,20, 0, 0, 1, 1},
+                    {1, 0, 0, 1, 0, 0, 1},
+                    {1, 0,10,12,10, 0, 1},
+                    {1, 0, 0, 2, 0, 0, 1},
+                    {1, 0, 0, 2, 0, 0, 1},
+                    {1, 1, 1, 1, 1, 1, 1},
+            });
+            GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
+            this.setVisible(false);
+            gameFrame.setVisible(true);
+        });//已更新
 
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    }
-
-}
+        level5Btn.addActionListener(l->{
+            MapMatrix mapMatrix = new MapMatrix(new int[][]{
+                    {1, 1, 1, 1, 1, 1, 0, 0},
+                    {1, 0, 0, 0, 0, 1, 1, 1},
+                    {1, 0, 0, 0, 2, 2, 0, 1},
+                    {1, 0,10,10,10,20, 0, 1},
+                    {1, 0, 1, 0, 0, 2, 0, 1},
+                    {1, 1, 1, 1, 1, 1, 1, 1},
+            });
+            GameFrame gameFrame = new GameFrame(600, 450, mapMatrix);
+            this.setVisible(false);
+            gameFrame.setVisible(true);
+        });
+        //初始地图更新完毕
 
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
