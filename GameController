@@ -23,7 +23,7 @@ public class GameController {
     public void restartGame() {
         System.out.println("Do restart game here");
         /*
-            重启逻辑（重置地图、英雄等）
+            todo: 重启逻辑（重置地图、英雄等）
         */
     }
 
@@ -35,13 +35,13 @@ public class GameController {
         GridComponent targetGrid = view.getGridComponent(tRow, tCol);//走到要去的位置
         int[][] map = model.getMatrix();
         if (map[tRow][tCol] == 0 || map[tRow][tCol] == 2) {//检查目标位置是否可通行
-            //update hero in MapMatrix
             model.getMatrix()[row][col] -= 20;//更新起始位置地图的状态
             model.getMatrix()[tRow][tCol] += 20;
             Hero h = currentGrid.removeHeroFromGrid();
             targetGrid.setHeroInGrid(h);//更新英雄的状态
             h.setRow(tRow);
             h.setCol(tCol);
+            //todo: 判断有没有成功/失败
             return true;
         }
         return false;
