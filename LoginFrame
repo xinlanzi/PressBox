@@ -23,6 +23,11 @@ public class LoginFrame extends JFrame {
         JLabel passLabel = FrameUtil.createJLabel(this, new Point(200, 110), 70, 60, "password:");
         username = FrameUtil.createJTextField(this, new Point(262, 50), 120, 40);
         password = FrameUtil.createJTextField(this, new Point(262, 120), 120, 40);
+        // JOptionPane考虑运用这个储存用户名和密码
+        // String str1 = JOptionPane.showInputDialog("Enter 1st integer");
+        // String str2 = JOptionPane.showInputDialog("Enter 2nd integer");
+        // int num1 = Integer.parseInt(str1);
+        // int num2 = Integer.parseInt(str2);
 
         submitBtn = FrameUtil.createButton(this, "Confirm", new Point(150, 220), 100, 40);
         resetBtn = FrameUtil.createButton(this, "Reset", new Point(400, 220), 100, 40);
